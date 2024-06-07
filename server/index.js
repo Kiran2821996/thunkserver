@@ -5,9 +5,10 @@ const cors = require('cors');
 const http = require('http');
 const socketIo = require('socket.io');
 const Search = require('./models/Search');
+require('dotenv').config(); 
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT | 3000;
 
 const mongoUri = 'mongodb+srv://kirandchennai:Mjk8Yms88P6r3NF1@cluster0.z7kvg3f.mongodb.net/';
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
